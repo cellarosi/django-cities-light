@@ -101,6 +101,7 @@ class Country(Base):
 
     class Meta:
         verbose_name_plural = _(u'countries')
+	ordering = ['name']
 signals.pre_save.connect(set_name_ascii, sender=Country)
 
 
